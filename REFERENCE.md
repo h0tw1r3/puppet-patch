@@ -6,9 +6,6 @@
 
 ### Classes
 
-#### Public Classes
-
-
 #### Private Classes
 
 * `patch::cache`: patch cache support
@@ -18,8 +15,6 @@
 ### Defined types
 
 * [`patch`](#patch): Apply patch to a target path
-
-## Classes
 
 ## Defined types
 
@@ -33,9 +28,9 @@ Apply patch to a target path
 
 ```puppet
 patch { 'patch vendor templates':
-  target => '/opt/application/templates',
-  source => file("${module_name}/vendor.patch"),
-  strip  => 1,
+  target  => '/opt/application/templates',
+  content => file("${module_name}/vendor.patch"),
+  strip   => 1,
 }
 ```
 
@@ -43,14 +38,14 @@ patch { 'patch vendor templates':
 
 The following parameters are available in the `patch` defined type:
 
-* [`target`](#target)
-* [`content`](#content)
-* [`source`](#source)
-* [`strip`](#strip)
-* [`loose`](#loose)
-* [`backup`](#backup)
+* [`target`](#-patch--target)
+* [`content`](#-patch--content)
+* [`source`](#-patch--source)
+* [`strip`](#-patch--strip)
+* [`loose`](#-patch--loose)
+* [`backup`](#-patch--backup)
 
-##### <a name="target"></a>`target`
+##### <a name="-patch--target"></a>`target`
 
 Data type: `Stdlib::Absolutepath`
 
@@ -58,23 +53,23 @@ directory where the patch will be applied
 
 Default value: `$title`
 
-##### <a name="content"></a>`content`
+##### <a name="-patch--content"></a>`content`
 
 Data type: `Optional[String]`
 
 text of a unified diff
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="source"></a>`source`
+##### <a name="-patch--source"></a>`source`
 
 Data type: `Optional[String]`
 
 unified diff file
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="strip"></a>`strip`
+##### <a name="-patch--strip"></a>`strip`
 
 Data type: `Integer`
 
@@ -82,19 +77,19 @@ strip the smallest prefix containing num leading slashes from each file name in 
 
 Default value: `0`
 
-##### <a name="loose"></a>`loose`
+##### <a name="-patch--loose"></a>`loose`
 
 Data type: `Optional[Boolean]`
 
 match patterns loosely, in case tabs or spaces have been munged in your files
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="backup"></a>`backup`
+##### <a name="-patch--backup"></a>`backup`
 
 Data type: `Optional[Boolean]`
 
 create backups of successfully patched files
 
-Default value: ``undef``
+Default value: `undef`
 

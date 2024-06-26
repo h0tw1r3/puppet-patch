@@ -15,9 +15,9 @@
 #
 # @example
 #   patch { 'patch vendor templates':
-#     target => '/opt/application/templates',
-#     source => file("${module_name}/vendor.patch"),
-#     strip  => 1,
+#     target  => '/opt/application/templates',
+#     content => file("${module_name}/vendor.patch"),
+#     strip   => 1,
 #   }
 define patch (
   Stdlib::Absolutepath $target  = $title,
